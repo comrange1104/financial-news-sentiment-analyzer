@@ -9,3 +9,8 @@ output/
 *.log
 .coverage
 htmlcov/
+
+# Recording resources are local only
+demo.py
+tests/test_demo.py
+docs/DEMO.md
