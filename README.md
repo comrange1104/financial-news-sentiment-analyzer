@@ -16,6 +16,16 @@ Repository công khai: [comrange1104/financial-news-sentiment-analyzer](https://
 
 Kịch bản quay video: [docs/DEMO.md](docs/DEMO.md). Kết quả kiểm chứng: [docs/VERIFICATION.md](docs/VERIFICATION.md).
 
+## Demo tự động khi quay video
+
+Sau khi cài môi trường, chạy một lệnh tại thư mục dự án:
+
+```powershell
+.venv\Scripts\python.exe -X utf8 demo.py
+```
+
+Script chuẩn bị API, chờ model sẵn sàng, rồi chờ bạn bật quay và nhấn Enter. Sau đó tự trình diễn theo nhịp **4 phút 30 giây**: giới thiệu, mã nguồn, các endpoint, ba nhãn, URL, bài dài và lỗi validation. Đọc lời thoại khớp từng mốc trong [kịch bản](docs/DEMO.md). Dùng `--fast` để chạy thử nhanh. Script chỉ gọi API và hiển thị, không tự quay/thu âm/upload video.
+
 ## Mô hình và cách phân tích
 
 - Model: [ProsusAI/finbert trên Hugging Face](https://huggingface.co/ProsusAI/finbert).
@@ -180,7 +190,9 @@ tests/
   test_api.py                Contract API, lifecycle và lỗi
   test_sentiment.py          Bao phủ token, giới hạn, nhãn và điểm
   test_article_reader.py     URL, DNS, redirect, timeout và extraction
+  test_demo.py               Timeline quay video và vòng đời server demo
 test_api_requests.py         Kiểm thử server thật bằng requests
+demo.py                      Demo tự động theo nhịp video 4:30
 docs/
   DEMO.md                    Kịch bản quay video
   VERIFICATION.md            Kết quả kiểm thử thực tế
